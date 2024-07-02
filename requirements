@@ -3,3 +3,4 @@ openpyxl
 transformers
 --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
 accelerate
+quanto
