@@ -1,9 +1,11 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from cat_eng_prompt import prompts
 
-model = AutoModelForCausalLM.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1", device_map="auto")
+acces_token = "<your HF access token>"
 
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1")
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1", token=acces_token, device_map="auto")
+
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1", token=acces_token)
 
 model_conclusions = []
 
