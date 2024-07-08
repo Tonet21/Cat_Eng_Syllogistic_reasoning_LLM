@@ -7,7 +7,7 @@ for premise1, premise2, mood in syllogisms:
         prompt = f""" 
     La teva tasca és triar la conclusió vàlida d'un sil·logisme. Se't presentarà una llista 
     amb quarte conclusions possibles. A part se't presentaran les premisses del sil·logisme 
-    entre tres accents oberts. La teva resposta serà únicament una de les conclusions de la llista 
+    entre tres accents tancats. La teva resposta serà únicament una de les conclusions de la llista 
     o <NVC> si no trobes una coclusió vàlida. El sil·logisme se't presentarà en el següent format:
     Premisa 1: <premisa 1>
     Premisa 2: <premisa 2>
