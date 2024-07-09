@@ -1,18 +1,20 @@
-sylloExamples = [('actuaries', 'sculptors', 'writers'), ('assistants', 'poets', 'scientists'),
-                 ('athletes', 'assistants', 'chefs'), ('chemists', 'drivers', 'dancers'), 
-                 ('chemists', 'workers', 'painters'), ('clerks', 'butchers', 'athletes'), 
-                 ('dancers', 'bankers', 'riders'), ('doctors', 'riders', 'investors'), 
-                 ('drivers', 'porters', 'chemists'), ('farmers', 'surfers', 'writers'),
-                 ('gamblers', 'cleaners', 'models'), ('golfers', 'cyclists', 'assistants'),
-                 ('hunters', 'analysts', 'swimmers'), ('joggers', 'actors', 'carpenters'),
-                 ('linguists', 'cooks', 'models'), ('linguists', 'skaters', 'singers'),
-                 ('managers', 'clerks', 'butchers'), ('miners', 'tellers', 'poets'), 
-                 ('models', 'tailors', 'florists'), ('nurses', 'scholars', 'buyers'),
-                 ('planners', 'sailors', 'engineers'), ('riders', 'agents', 'waiters'),
-                 ('riders', 'novelists', 'linguists'), ('runners', 'opticians', 'clerks'),
-                 ('scientists', 'novelists', 'florists'), ('skaters', 'barbers', 'cooks'),
-                 ('students', 'cashiers', 'doctors'), ('students', 'hikers', 'designers'),
-                 ('surfers', 'painters', 'porters'), ('therapists', 'hikers', 'opticians')]
+# -*- coding: utf-8 -*-
+
+sylloExamples = [('actuari', 'escultor', 'escriptor'), ('assistent', 'poeta', 'científic'),
+                 ('atleta', 'assistent', 'chef'), ('químic', 'bussejador', 'ballarí'), 
+                 ('químic', 'treballador', 'pintor'), ('administratiu', 'carnisser', 'atleta'), 
+                 ('ballarí', 'banquer', 'genet'), ('doctor', 'genet', 'inversor'), 
+                 ('bussejador', 'grum', 'químic'), ('pagès', 'surfista', 'escriptor'),
+                 ('jugador', 'netejador', 'model'), ('golfista', 'ciclista', 'assistent'),
+                 ('caçador', 'analista', 'nedador'), ('corredor', 'actor', 'fuster'),
+                 ('lingüista', 'cuiner', 'model'), ('lingüista', 'patinador', 'cantant'),
+                 ('gestor', 'administratiu', 'carnisser'), ('miner', 'caixer', 'poeta'),
+                 ('model', 'sastre', 'florista'), ('infermer', 'erudit', 'comprador'),
+                 ('planificador', 'mariner', 'enginyer'), ('genet', 'agent', 'cambrer'),
+                 ('genet', 'novel·lista', 'lingüista'), ('corredor', 'òptic', 'administratiu'),
+                 ('científic', 'novel·lista', 'florista'), ('patinador', 'perruquer', 'cuiner'),
+                 ('estudiant', 'caixer', 'metge'), ('estudiant', 'excursionista', 'disenyador'),
+                 ('surfista', 'pintor', 'grum'), ('terapeuta', 'excursionista', 'òptic')]
 
 
 wordType = {"S": "subject",
