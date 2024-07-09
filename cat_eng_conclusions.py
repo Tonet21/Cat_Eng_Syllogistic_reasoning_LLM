@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 from cat_syllo import syllogisms
 from collections import defaultdict
