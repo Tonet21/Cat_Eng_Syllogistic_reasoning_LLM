@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from cat_eng_prompt import prompts
 
