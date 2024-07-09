@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from cat_syllo import syllogisms, possible_conclusions
 
 
