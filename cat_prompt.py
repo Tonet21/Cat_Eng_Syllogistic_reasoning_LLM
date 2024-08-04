@@ -9,7 +9,7 @@ system_message = f"""La teva tasca consisteix en avaluar un sil·logisme i triar
                      Opcions: <llista de quatre opcions separades per comes>
 
                      La teva resposta ha de ser una de les opcions presentades o "NVC" si cap de les opcions no és vàlida.
-                     No necessites donar més explicacions, la resposta hauria de ser unicament la conclusió.
+                     No necessites donar més explicacions, la resposta hauria de ser unicament l'opció que has triat.
                      Pren-te el teu temps per arribar a la resposta correcta, no necessites precipitar-te.
                      """
 prompts = []
