@@ -1,27 +1,25 @@
 # -*- coding: utf-8 -*-
-
 from cat_syllo import syllogisms, possible_conclusions
 
+system_message = f"""La teva tasca consisteix en avaluar un sil·logisme i triar la conclusió vàlida d'una llista amb quatre opcions.
+                     Se't presentaran dues premises i quatre conclusions possibles seguint el següent format:
 
+                     Premisa 1: <premisa 1>
+                     Premisa 2: <premisa 2>
+                     Opcions: <llista de quatre opcions separades per comes>
+
+                     La teva resposta ha de ser una de les opcions presentades o "NVC" si cap de les opcions no és vàlida.
+                     No necessites donar més explicacions, la resposta hauria de ser unicament la conclusió.
+                     Pren-te el teu temps per arribar a la resposta correcta, no necessites precipitar-te.
+                     """
 prompts = []
 i = 0
-for premise1, premise2, mood in syllogisms:
-        prompt = f""" 
-    La teva tasca és triar la conclusió vàlida d'un sil·logisme. Se't presentarà una llista 
-    amb quarte conclusions possibles. A part se't presentaran les premisses del sil·logisme 
-    entre tres accents tancats. La teva resposta serà únicament una de les conclusions de la llista 
-    o <NVC> si no trobes una coclusió vàlida. El sil·logisme se't presentarà en el següent format:
-    Premisa 1: <premisa 1>
-    Premisa 2: <premisa 2>
-    Opcions: <llista de conclusions possibles separades per comes>
+for premise1, premise2, mood, type_ in syllogisms:
+        prompt = f"""
 
-    Pren-te el teu temps per pensar, fes-ho sense pressa..
-
-    ``` 
-    Premisa 1: {premise1}
-    Premisa 2: {premise2}
-    Opcions: {possible_conclusions[i][0]}, {possible_conclusions[i][1]}, {possible_conclusions[i][2]}, {possible_conclusions[i][3]}
-    ```
+                    Premisa 1: {premise1}
+                    Premisa 2: {premise2}
+                    Opcions: {possible_conclusions[i][0]}, {possible_conclusions[i][1]}, {possible_conclusions[i][2]}, {possible_conclusions[i][3]}
 
     """
         prompts.append(prompt)
