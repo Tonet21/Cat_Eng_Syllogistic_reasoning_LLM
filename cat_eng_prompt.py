@@ -17,9 +17,9 @@ i = 0
 for premise1, premise2, mood, type_ in syllogisms:
         prompt = f"""
 
-                    Premise 1: {premise1}
-                    Premise 2: {premise2}
-                    Choices: {possible_conclusions[i][0]}, {possible_conclusions[i][1]}, {possible_conclusions[i][2]}, {possible_conclusions[i][3]}
+                    Premisa 1: {premise1}
+                    Premisa 2: {premise2}
+                    Opcions: {possible_conclusions[i][0]}, {possible_conclusions[i][1]}, {possible_conclusions[i][2]}, {possible_conclusions[i][3]}
 
     """
         prompts.append(prompt)
