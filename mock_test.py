@@ -40,9 +40,6 @@ for syllo_mood, _, conclusion_mood, type_ in conclusions:
     type_count[syllo_mood][type_][conclusion_mood] += 1
 
 
-print(type_count)
-##print(conclusion_count)
- 
 data = conclusion_count
 columns = ["A", "E", "I", "O", "NVC"]
 
@@ -70,11 +67,9 @@ for mood, types in type_count.items():
             row[conclusion_mood] = count
         flattened_data.append(row)
 
-# Create a DataFrame
 columns = ["syllogism", "type", "A", "E", "I", "O", "NVC"]
 df = pd.DataFrame(flattened_data, columns=columns)
 
-# Save the DataFrame to an Excel file
 excel_file_path = "syllogism_type_conclusions.xlsx"
 df.to_excel(excel_file_path, index=False)
 
