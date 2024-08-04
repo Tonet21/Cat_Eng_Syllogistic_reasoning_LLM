@@ -11,7 +11,7 @@ from mistral_common.protocol.instruct.messages import SystemMessage
 
 access_token = ""
 
-local_model_dir = "/mnt/cimec-storage6/users/antoni.llinasbarbara/Cat_Eng_Syllogistic_reasoning_LLM/models"
+local_model_dir = "PATH_TO_SAVE"
 mistral_models_path = Path(local_model_dir)
 mistral_models_path.mkdir(parents=True, exist_ok=True)
 
