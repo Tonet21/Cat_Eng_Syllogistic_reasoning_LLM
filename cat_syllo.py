@@ -64,9 +64,8 @@ class Syllogism:
         self.mood = Mood(mood)
         self.subject = syllowords[0]
         self.middle = syllowords[1]
-        self.predicate = syllowords[2]
-
-
+        self.predicate = syllowords[2] 
+      
     def generate(self):
         allSentences = []
         for sentence in ("major", "minor"):
@@ -78,13 +77,13 @@ class Syllogism:
             sFormat = getattr(self.figure, sentence)
             wt = wordType[sFormat[0]]
             sOut += getattr(self, wt)
+            sOut += " are "
             sOut += self.mood.postVerbLink[linkage]
-            sOut += " són "
             wt = wordType[sFormat[1]]
             sOut += getattr(self, wt)
 
             allSentences.append(sOut)
-        return allSentences
+        return allSentences, self.figure.figureType
 
 def generateAll():
     all_generated_syllogisms = []
@@ -94,7 +93,7 @@ def generateAll():
             for a in "AEIO":
                 for b in "AEIO":         
                          s = Syllogism(i, a + b, terms)
-                         syllogism = s.generate() + [a + b]
+                         syllogism = s.generate() + [a + b] + [s.generate()[1]]
                          all_generated_syllogisms.append(syllogism)
                          choices = [f"""Tots {terms[0]} són {terms[2]}""",
                           f"""No tots els {terms[0]} són {terms[2]}""",
