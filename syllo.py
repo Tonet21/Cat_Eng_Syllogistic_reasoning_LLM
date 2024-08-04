@@ -1,19 +1,12 @@
-from collections import OrderedDict
-import random
-
-
-
-
-
 sylloExamples = [('actuaries', 'sculptors', 'writers'), ('assistants', 'poets', 'scientists'),
-                 ('athletes', 'assistants', 'chefs'), ('chemists', 'drivers', 'dancers'), 
-                 ('chemists', 'workers', 'painters'), ('clerks', 'butchers', 'athletes'), 
-                 ('dancers', 'bankers', 'riders'), ('doctors', 'riders', 'investors'), 
+                 ('athletes', 'assistants', 'chefs'), ('chemists', 'drivers', 'dancers'),
+                 ('chemists', 'workers', 'painters'), ('clerks', 'butchers', 'athletes'),
+                 ('dancers', 'bankers', 'riders'), ('doctors', 'riders', 'investors'),
                  ('drivers', 'porters', 'chemists'), ('farmers', 'surfers', 'writers'),
                  ('gamblers', 'cleaners', 'models'), ('golfers', 'cyclists', 'assistants'),
                  ('hunters', 'analysts', 'swimmers'), ('joggers', 'actors', 'carpenters'),
                  ('linguists', 'cooks', 'models'), ('linguists', 'skaters', 'singers'),
-                 ('managers', 'clerks', 'butchers'), ('miners', 'tellers', 'poets'), 
+                 ('managers', 'clerks', 'butchers'), ('miners', 'tellers', 'poets'),
                  ('models', 'tailors', 'florists'), ('nurses', 'scholars', 'buyers'),
                  ('planners', 'sailors', 'engineers'), ('riders', 'agents', 'waiters'),
                  ('riders', 'novelists', 'linguists'), ('runners', 'opticians', 'clerks'),
@@ -88,7 +81,7 @@ class Syllogism:
             sOut += getattr(self, wt)
 
             allSentences.append(sOut)
-        return allSentences
+        return allSentences, self.figure.figureType
 
 def generateAll():
     all_generated_syllogisms = []
@@ -96,9 +89,9 @@ def generateAll():
     for terms in sylloExamples:
         for i in range(1, 5):
             for a in "AEIO":
-                for b in "AEIO":         
+                for b in "AEIO":
                          s = Syllogism(i, a + b, terms)
-                         syllogism = s.generate() + [a + b]
+                         syllogism = s.generate()[0] + [a + b] + [s.generate()[1]]
                          all_generated_syllogisms.append(syllogism)
                          choices = [f"""All {terms[0]} are {terms[2]}""",
                           f"""No {terms[0]} are {terms[2]}""",
@@ -111,10 +104,10 @@ def generateAll():
     return all_generated_syllogisms, possible_conclusions
 
 syllogisms = generateAll()[0]
-possible_conclusions = generateAll()[1] 
+possible_conclusions = generateAll()[1]
 
-print(syllogisms[0])
-print(possible_conclusions[0])
+
+
 
 
 
