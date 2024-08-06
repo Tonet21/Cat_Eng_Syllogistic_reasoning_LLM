@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 sylloExamples = [('actuari', 'escultor', 'escriptor'), ('assistent', 'poeta', 'científic'),
-                 ('atleta', 'assistent', 'chef'), ('químic', 'bussejador', 'ballarí'), 
-                 ('químic', 'treballador', 'pintor'), ('administratiu', 'carnisser', 'atleta'), 
-                 ('ballarí', 'banquer', 'genet'), ('doctor', 'genet', 'inversor'), 
+                 ('atleta', 'assistent', 'chef'), ('químic', 'bussejador', 'ballarí'),
+                 ('químic', 'treballador', 'pintor'), ('administratiu', 'carnisser', 'atleta'),
+                 ('ballarí', 'banquer', 'genet'), ('doctor', 'genet', 'inversor'),
                  ('bussejador', 'grum', 'químic'), ('pagès', 'surfista', 'escriptor'),
                  ('jugador', 'netejador', 'model'), ('golfista', 'ciclista', 'assistent'),
                  ('caçador', 'analista', 'nedador'), ('corredor', 'actor', 'fuster'),
@@ -43,10 +43,10 @@ class Figure:
 
 
 class Mood:
-    linkMapping = {"A": "Tots els ",
-                   "E": "No tots els ",
-                   "I": "Alguns ",
-                   "O": "Alguns ",
+    linkMapping = {"A": "Tot ",
+                   "E": "Cap ",
+                   "I": "Algun ",
+                   "O": "Algun ",
     }
     postVerbLink = {"A": "",
                     "E": "",
@@ -64,8 +64,8 @@ class Syllogism:
         self.mood = Mood(mood)
         self.subject = syllowords[0]
         self.middle = syllowords[1]
-        self.predicate = syllowords[2] 
-      
+        self.predicate = syllowords[2]
+
     def generate(self):
         allSentences = []
         for sentence in ("major", "minor"):
@@ -77,7 +77,7 @@ class Syllogism:
             sFormat = getattr(self.figure, sentence)
             wt = wordType[sFormat[0]]
             sOut += getattr(self, wt)
-            sOut += " are "
+            sOut += " és "
             sOut += self.mood.postVerbLink[linkage]
             wt = wordType[sFormat[1]]
             sOut += getattr(self, wt)
@@ -91,14 +91,14 @@ def generateAll():
     for terms in sylloExamples:
         for i in range(1, 5):
             for a in "AEIO":
-                for b in "AEIO":         
+                for b in "AEIO":
                          s = Syllogism(i, a + b, terms)
                          syllogism = s.generate()[0] + [a + b] + [s.generate()[1]]
                          all_generated_syllogisms.append(syllogism)
-                         choices = [f"""Tots {terms[0]} són {terms[2]}""",
-                          f"""No tots els {terms[0]} són {terms[2]}""",
-                          f"""Alguns {terms[0]} són {terms[2]}""",
-                          f"""Alguns {terms[0]} no són {terms[2]}""" ]
+                         choices = [f"""Tot {terms[0]} és {terms[2]}""",
+                          f"""Cap {terms[0]} és {terms[2]}""",
+                          f"""Algun {terms[0]} és {terms[2]}""",
+                          f"""Algun {terms[0]} no és {terms[2]}""" ]
                          possible_conclusions.append(choices)
 
 
@@ -106,8 +106,6 @@ def generateAll():
     return all_generated_syllogisms, possible_conclusions
 
 syllogisms = generateAll()[0]
-possible_conclusions = generateAll()[1] 
-
-
+possible_conclusions = generateAll()[1]
 
 
