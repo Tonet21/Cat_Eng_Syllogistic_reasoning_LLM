@@ -93,7 +93,7 @@ def generateAll():
             for a in "AEIO":
                 for b in "AEIO":         
                          s = Syllogism(i, a + b, terms)
-                         syllogism = s.generate() + [a + b] + [s.generate()[1]]
+                         syllogism = s.generate()[0] + [a + b] + [s.generate()[1]]
                          all_generated_syllogisms.append(syllogism)
                          choices = [f"""Tots {terms[0]} són {terms[2]}""",
                           f"""No tots els {terms[0]} són {terms[2]}""",
